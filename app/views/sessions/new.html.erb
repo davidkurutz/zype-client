@@ -2,11 +2,11 @@
   <%= form_tag '/login' do %>
     <div class="control-group">
       <%= label_tag :username %>
-      <%= text_field_tag :username, params[:username] || '' %>
+      <%= text_field_tag :username %>
     </div>
     <div class="control-group">
       <%= label_tag :password %>
-      <%= password_field_tag :password, params[:password] || '' %>
+      <%= password_field_tag :password %>
     </div>
     <%= hidden_field_tag :video_id, params[:video_id] || '' %>
     <%= submit_tag "Login", class: 'btn btn-success' %>
