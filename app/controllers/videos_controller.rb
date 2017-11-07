@@ -22,6 +22,8 @@ class VideosController < ApplicationController
     end
   end
 
+  private
+
   def video_url(id = nil)
     "https://api.zype.com/videos#{ id ? '/' + id : ''}" + "?app_key=#{app_key}"
   end
