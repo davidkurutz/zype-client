@@ -1,5 +1,3 @@
-# README
-
 #Zype Client
 My Zype Client application provides a simple UI that pulls data from the Zype API, allowing the user to view a paginated list of videos, click through to watch a video, and log in to view paywalled videos.
 
@@ -7,14 +5,14 @@ Given that all data comes from the Zype video and OAUTH APIs, and login state wo
 
 #Routes
 
-  GET /               videos#index
-  GET /videos         videos#index
-  GET /videos/:id   videos#show
+	GET /               videos#index
+	GET /videos         videos#index
+	GET /videos/:id  	videos#show
 
-  GET /login      sessions#new
-  POST /login       sessions#create
-  
-  GET /logout     sessions#destroy
+	GET /login			sessions#new
+	POST /login		    sessions#create
+	
+	GET /logout			sessions#destroy
 
 #Controllers
 
@@ -37,6 +35,6 @@ SessionsController also defines private methods for URL generation, easy access 
 
 #Secrets
 
-All Zype API keys are stored in Rails 5.1 encrypted secrets.
+All Zype API keys are stored in Rails 5.1 encrypted secrets
 
 
