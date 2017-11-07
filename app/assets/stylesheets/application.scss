@@ -63,6 +63,9 @@ div.login {
       text-align: center;
       margin-right: 20px;
     }
+    input[type='text'], input[type='password'], button {
+      width: 200px;
+    }
   }
 }
 
