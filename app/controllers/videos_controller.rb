@@ -4,8 +4,7 @@ class VideosController < ApplicationController
   helper_method :embed_url
 
   def index
-    page = params['page'] || 1
-    response = JSON.parse(HTTP.get(videos_url(page)))
+    response = JSON.parse(HTTP.get(videos_url(params['page'] || 1)))
     @videos = response['response']
     pagination = response['pagination']
     @prev = pagination['previous']
@@ -15,14 +14,17 @@ class VideosController < ApplicationController
   def show
     @video_id = params[:id]
     response = JSON.parse(HTTP.get(video_url(@video_id)))
+    check_subscription(response)
+  end
 
+  private
+
+  def check_subscription(response)
     if response['response']['subscription_required'] && !logged_in?
       flash[:error] = "This video is for subscribers only. Please log in."
       redirect_to login_path(:video_id => @video_id)
     end
   end
-
-  private
 
   def video_url(id = nil)
     "https://api.zype.com/videos#{ id ? '/' + id : ''}" + "?app_key=#{app_key}"
