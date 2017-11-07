@@ -1,0 +1,11 @@
+<main>
+  <div class="pages">
+    <a href="/?page=<%= @prev %>" class= "btn btn-info <%= @prev ? '' : 'inactive' %>">&lt&lt prev</a>
+    <a href="/?page=<%= @nxt %>" class= "btn btn-info <%= @nxt ? '' : 'inactive' %>">next &gt&gt</a>
+  </div>
+  <ul id="videos">
+    <% @videos.each do |video| %>
+      <%= render 'video', video: video %>
+    <% end %>
+  </ul>
+</main>

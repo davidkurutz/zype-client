@@ -1,0 +1,16 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid header">
+    <div class="navbar-header">
+      <%= link_to "ZypeClient", root_path, :class => 'brand' %>
+    </div>
+    <% if logged_in? %>
+      <div class="nav_item">
+        <%= link_to "Log Out", logout_path, class: 'btn btn-primary btn-small' %>
+      </div>
+    <% else %>
+      <div class="nav_item">
+        <%= link_to "Log in", login_path, class: 'btn btn-primary btn-small' %>
+      </div>
+    <% end %>
+  </div>
+</nav>

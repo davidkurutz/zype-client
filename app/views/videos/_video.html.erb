@@ -1,0 +1,9 @@
+<% classname = video['subscription_required'] ? 'subscription_required' : '' %>
+<li class="<%= classname %>">
+  <a href="/videos/<%= video['_id'] %>">
+    <figure>
+      <img src="<%= video['thumbnails'][0]['url'] %>" alt="<%= video['title'] %>">
+    </figure>
+    <%= video['title'] %>
+  </a>
+</li>
