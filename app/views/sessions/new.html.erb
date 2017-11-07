@@ -10,5 +10,6 @@
     </div>
     <%= hidden_field_tag :video_id, params[:video_id] || '' %>
     <%= submit_tag "Login", class: 'btn btn-success' %>
+    <%= button_tag "Subscribe", disabled: true, class: 'btn btn-info' %>
   <% end %>
 </div>
