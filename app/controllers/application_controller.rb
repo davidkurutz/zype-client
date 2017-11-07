@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   helper_method :app_key, :logged_in?, :access_token
 
   def logged_in?
-    !!session[:access_token]
+    !!access_token
   end
 
   def access_token
